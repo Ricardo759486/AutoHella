@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Properties;
-import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import autohella.model.Estante;
 import autohella.model.Producto;
+import autohella.persistence.Archivo;
+import autohella.persistence.EstanteDAO;
 import autohella.view.VentanaPrincipal;
 
 public class Controller implements ActionListener {
@@ -20,26 +20,24 @@ public class Controller implements ActionListener {
 
 	private Producto producto;
 	private Estante estante;
-	// private Propiedades propiedades;
-	// private Properties pDatos;
+	private File fileEstante;
+	private Archivo archivo;
+	private EstanteDAO estanteDAO;
 	private VentanaPrincipal ventanaPrincipal;
 	private UIManager UI = new UIManager();
+	private int verificar = 0;
 
 	public Controller() throws Exception {
 
 		ventanaPrincipal = new VentanaPrincipal();
-
-		asignarOyentes();
-
 		alEstante = new ArrayList<Estante>();
-
 		estante = new Estante();
 		producto = new Producto();
-
-		// propiedades = new Propiedades();
-		// pDatos = new Properties();
-		// pDatos = propiedades.leerDatos(new File("data\\preguntas.properties"));
-		// alPregunta = propiedades.CargarDatos(pDatos);
+		fileEstante = new File("datos\\estante.dat");
+		archivo = new Archivo(fileEstante);
+		estanteDAO = new EstanteDAO(archivo);
+		alEstante = archivo.leerArchivo(fileEstante);
+		asignarOyentes();
 		UI.put("OptionPane.background", Color.DARK_GRAY);
 		UI.put("Panel.background", Color.DARK_GRAY);
 
@@ -75,11 +73,19 @@ public class Controller implements ActionListener {
 		ventanaPrincipal.getPanelEntrada().getBtnBateria().addActionListener(this);
 		ventanaPrincipal.getPanelEntrada().getBtnEntrar().addActionListener(this);
 
+		ventanaPrincipal.getPanelVista().getBtnCerrar().addActionListener(this);
+		ventanaPrincipal.getPanelVista().getBtnMinimizar().addActionListener(this);
+
 		ventanaPrincipal.getPanelinicio().getBtnCerrar().addActionListener(this);
 		ventanaPrincipal.getPanelinicio().getBtnMinimizar().addActionListener(this);
 		ventanaPrincipal.getPanelinicio().getBtnRegistro().addActionListener(this);
 		ventanaPrincipal.getPanelinicio().getBtnBuscar().addActionListener(this);
 		ventanaPrincipal.getPanelinicio().getBtnHome().addActionListener(this);
+
+		ventanaPrincipal.getPanelRegistro().getBtnCerrar().addActionListener(this);
+		ventanaPrincipal.getPanelRegistro().getBtnMinimizar().addActionListener(this);
+		ventanaPrincipal.getPanelRegistro().getBtnRegistro().addActionListener(this);
+		ventanaPrincipal.getPanelRegistro().getBtnEditar().addActionListener(this);
 	}
 
 	@Override
@@ -95,15 +101,23 @@ public class Controller implements ActionListener {
 		}
 
 //------------------------------------------Panel Principal-------------------------------------
-		
+
 		if (comando.equals("Home")) {
 
 			ventanaPrincipal.getPanelEntrada().setVisible(true);
 			ventanaPrincipal.getPanelinicio().setVisible(false);
 		}
 
+		if (comando.equals("Buscar")) {
+
+			ventanaPrincipal.getPanelVista().setVisible(true);
+			ventanaPrincipal.getPanelVista().getPanelTabla()
+					.actualizarTabla(estante.generarTablaApostador(estanteDAO.NumeroProducto(alEstante), alEstante));
+			ventanaPrincipal.getPanelinicio().setVisible(false);
+		}
+
 //----------------------------------------------------------------------------------------------
-		
+
 //------------------------------------------Panel Entrada-------------------------------------
 
 		if (comando.equals("Entrar")) {
@@ -114,12 +128,16 @@ public class Controller implements ActionListener {
 //----------------------------------------------------------------------------------------------
 
 //------------------------------------------Panel Almacen-------------------------------------
-		
+
 		if (comando.equals("Salir")) {
 
 			ventanaPrincipal.getPanelEntrada().setVisible(true);
 			ventanaPrincipal.getPanelAlmacen().setVisible(false);
 		}
+
+//----------------------------------------------------------------------------------------------
+
+//------------------------------------------Panel Vista(Busqueda)-------------------------------------
 
 //----------------------------------------------------------------------------------------------
 

@@ -1,18 +1,23 @@
 package autohella.view;
 
 import java.awt.Cursor;
+import java.awt.Font;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 public class PanelAlmacen extends JPanel {
 
 	private ImageIcon fondo, recFondo, img, recImg;
 
 	private JLabel lblImagenFondo;
+	private JTextArea texto;
+	private JScrollPane scrool;
 
 	private JButton btnMinimizar, btnCerrar, btnEstante, btnEstante2, btnEstante3, btnEstante4, btnEstante5,
 			btnEstante6, btnEstante7, btnEstante8, btnEstante9, btnEstante10, btnEstante11, btnCajonero, btnSalir;
@@ -196,6 +201,20 @@ public class PanelAlmacen extends JPanel {
 		btnSalir.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnSalir.setActionCommand("Salir");
 		add(btnSalir);
+
+		texto = new JTextArea("Por favor seleccioné el lugar donde se guardará el repuesto.");
+		texto.setEditable(false);
+		texto.setLineWrap(true);
+		texto.setWrapStyleWord(true);
+		texto.setOpaque(false);
+		texto.setBackground(null);
+		texto.setFont(new Font("Arial", Font.ITALIC, 30));
+		scrool = new JScrollPane(texto);
+		scrool.setBackground(null);
+		scrool.setOpaque(false);
+		scrool.getViewport().setOpaque(false);
+		scrool.setBounds(130, 120, 320, 150);
+		add(scrool);
 
 		fondo = new ImageIcon(getClass().getResource("/imagenes/fondoEntrada.jpg"));
 		recFondo = new ImageIcon(fondo.getImage().getScaledInstance(1200, 700, Image.SCALE_SMOOTH));

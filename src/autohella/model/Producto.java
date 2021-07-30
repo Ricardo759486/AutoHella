@@ -6,21 +6,21 @@ public class Producto {
 	private String nombre;
 	private String marca;
 	private String descripcion;
-	private int precio;
 	private int cantidad;
+	private int precio;
 
 	public Producto() {
 
 	}
 
-	public Producto(String referencia, String nombre, String marca, String descripcion, int precio, int cantidad) {
+	public Producto(String referencia, String nombre, String marca, String descripcion, int cantidad, int precio) {
 		super();
 		this.referencia = referencia;
 		this.nombre = nombre;
 		this.marca = marca;
 		this.descripcion = descripcion;
-		this.precio = precio;
 		this.cantidad = cantidad;
+		this.precio = precio;
 	}
 
 	public String getReferencia() {
@@ -55,14 +55,6 @@ public class Producto {
 		this.descripcion = descripcion;
 	}
 
-	public int getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(int precio) {
-		this.precio = precio;
-	}
-
 	public int getCantidad() {
 		return cantidad;
 	}
@@ -71,4 +63,11 @@ public class Producto {
 		this.cantidad = cantidad;
 	}
 
+	public int getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
 }

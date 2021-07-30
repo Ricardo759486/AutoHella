@@ -16,6 +16,8 @@ public class AplMain {
 		} catch (InstantiationException e) {
 		} catch (IllegalAccessException e) {
 		}
+		
 		Controller control = new Controller();
+		//VentanaPrincipal ventana = new VentanaPrincipal();
 	}
 }

@@ -8,8 +8,8 @@ public class VentanaPrincipal extends JFrame {
 	private PanelEntrada panelEntrada;
 	private PanelAlmacen panelAlmacen;
 	private PanelInicio panelinicio;
-//	private PanelJuego panelJuego;
-//	private PanelFinal panelFinal;
+	private PanelVista panelVista;
+	private PanelRegistro panelRegistro;
 
 	public VentanaPrincipal() {
 
@@ -36,11 +36,11 @@ public class VentanaPrincipal extends JFrame {
 		panelinicio = new PanelInicio();
 		getContentPane().add(panelinicio);
 
-//		panelJuego = new PanelJuego();
-//		getContentPane().add(panelJuego);
-//
-//		panelFinal = new PanelFinal();
-//		getContentPane().add(panelFinal);
+		panelVista = new PanelVista();
+		getContentPane().add(panelVista);
+
+		panelRegistro = new PanelRegistro();
+		getContentPane().add(panelRegistro);
 
 	}
 
@@ -66,6 +66,22 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setPanelinicio(PanelInicio panelinicio) {
 		this.panelinicio = panelinicio;
+	}
+
+	public PanelVista getPanelVista() {
+		return panelVista;
+	}
+
+	public void setPanelVista(PanelVista panelVista) {
+		this.panelVista = panelVista;
+	}
+
+	public PanelRegistro getPanelRegistro() {
+		return panelRegistro;
+	}
+
+	public void setPanelRegistro(PanelRegistro panelRegistro) {
+		this.panelRegistro = panelRegistro;
 	}
 
 }
