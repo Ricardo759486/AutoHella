@@ -18,6 +18,7 @@ public class PanelRegistro extends JPanel {
 	private Font fuente1;
 	private JTextField txtReferencia, txtNombre, txtMarca, txtDescripcion, txtPrecio, txtCantidad;
 	private Boton btnRegistro, btnEditar;
+	private Boton btnInicio;
 
 	public PanelRegistro() {
 
@@ -62,7 +63,7 @@ public class PanelRegistro extends JPanel {
 		btnRegistro.setFocusPainted(false);
 		btnRegistro.setIcon(recImg);
 		btnRegistro.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		btnRegistro.setActionCommand("INGRESARUSUARIO");
+		btnRegistro.setActionCommand("Registrar");
 		add(btnRegistro);
 
 		img = new ImageIcon("recursos/btnEditar.png");
@@ -74,7 +75,7 @@ public class PanelRegistro extends JPanel {
 		btnEditar.setFocusPainted(false);
 		btnEditar.setIcon(recImg);
 		btnEditar.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		btnEditar.setActionCommand("INGRESARUSUARIO");
+		btnEditar.setActionCommand("Editar");
 		add(btnEditar);
 
 		fuente1 = new Font("Arial", Font.ITALIC, 15);
@@ -108,6 +109,18 @@ public class PanelRegistro extends JPanel {
 		txtCantidad.setBounds(470, 450, 250, 35);
 		txtCantidad.setFont(fuente1);
 		add(txtCantidad);
+
+		img = new ImageIcon("recursos/inicio.png");
+		recImg = new ImageIcon(img.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+		btnInicio = new Boton();
+		btnInicio.setBounds(13, 590, 100, 100);
+		btnInicio.setBorderPainted(false);
+		btnInicio.setContentAreaFilled(false);
+		btnInicio.setFocusPainted(false);
+		btnInicio.setIcon(recImg);
+		btnInicio.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		btnInicio.setActionCommand("Inicio");
+		add(btnInicio);
 
 		fondo = new ImageIcon(getClass().getResource("/imagenes/fondoRegistro.jpg"));
 		recFondo = new ImageIcon(fondo.getImage().getScaledInstance(1200, 700, Image.SCALE_SMOOTH));
@@ -243,6 +256,14 @@ public class PanelRegistro extends JPanel {
 
 	public void setBtnEditar(Boton btnEditar) {
 		this.btnEditar = btnEditar;
+	}
+
+	public Boton getBtnInicio() {
+		return btnInicio;
+	}
+
+	public void setBtnInicio(Boton btnInicio) {
+		this.btnInicio = btnInicio;
 	}
 
 }

@@ -21,11 +21,12 @@ public class PanelEntrada extends JPanel {
 
 	private JButton btnMinimizar, btnCerrar, btnEstanteAlargado, btnVitrina, btnVitrina2, btnVitrina3, btnVitrinaGrande,
 			btnCorreas, btnCorreas2, btnBateria, btnEntrar;
+	private Boton btnInicio;
 
 	public PanelEntrada() {
 
 		setLayout(null);
-		setVisible(true);
+		setVisible(false);
 		setSize(1200, 700);
 		inicializarComponentes();
 	}
@@ -161,7 +162,19 @@ public class PanelEntrada extends JPanel {
 		btnEntrar.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnEntrar.setActionCommand("Entrar");
 		add(btnEntrar);
-		
+
+		img = new ImageIcon("recursos/inicio.png");
+		recImg = new ImageIcon(img.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+		btnInicio = new Boton();
+		btnInicio.setBounds(1090, 590, 100, 100);
+		btnInicio.setBorderPainted(false);
+		btnInicio.setContentAreaFilled(false);
+		btnInicio.setFocusPainted(false);
+		btnInicio.setIcon(recImg);
+		btnInicio.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		btnInicio.setActionCommand("Inicio");
+		add(btnInicio);
+
 		texto = new JTextArea("Por favor seleccioné el lugar donde se guardará el repuesto.");
 		texto.setEditable(false);
 		texto.setLineWrap(true);
@@ -222,6 +235,22 @@ public class PanelEntrada extends JPanel {
 
 	public void setLblImagenFondo(JLabel lblImagenFondo) {
 		this.lblImagenFondo = lblImagenFondo;
+	}
+
+	public JTextArea getTexto() {
+		return texto;
+	}
+
+	public void setTexto(JTextArea texto) {
+		this.texto = texto;
+	}
+
+	public JScrollPane getScrool() {
+		return scrool;
+	}
+
+	public void setScrool(JScrollPane scrool) {
+		this.scrool = scrool;
 	}
 
 	public JButton getBtnMinimizar() {
@@ -310,6 +339,14 @@ public class PanelEntrada extends JPanel {
 
 	public void setBtnEntrar(JButton btnEntrar) {
 		this.btnEntrar = btnEntrar;
+	}
+
+	public Boton getBtnInicio() {
+		return btnInicio;
+	}
+
+	public void setBtnInicio(Boton btnInicio) {
+		this.btnInicio = btnInicio;
 	}
 
 }

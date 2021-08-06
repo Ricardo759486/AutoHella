@@ -3,6 +3,7 @@ package autohella.persistence;
 import java.io.*;
 import java.util.*;
 
+import autohella.model.Cajonero;
 import autohella.model.Estante;
 import autohella.model.Producto;
 
@@ -35,7 +36,7 @@ public class EstanteDAO {
 		}
 		return encontrado;
 	}
-	
+
 	public int NumeroProducto(ArrayList<Estante> alEstante) {
 
 		int encontrado = 0;
@@ -50,7 +51,7 @@ public class EstanteDAO {
 		return encontrado;
 	}
 
-	public void agregarEstantes(File file, ArrayList<Estante> alEstante) {
+	public void agregarEstantes(File file, ArrayList<Estante> alEstante, ArrayList<Cajonero> alCajonero) {
 
 		List<List<Producto>> estante = new ArrayList<List<Producto>>();
 
@@ -65,6 +66,9 @@ public class EstanteDAO {
 		List<Producto> nueve = new ArrayList<Producto>();
 		List<Producto> diez = new ArrayList<Producto>();
 		List<Producto> once = new ArrayList<Producto>();
+		List<Producto> doce = new ArrayList<Producto>();
+		List<Producto> trece = new ArrayList<Producto>();
+		List<Producto> catorce = new ArrayList<Producto>();
 
 		estante.add(uno);
 		estante.add(dos);
@@ -265,23 +269,183 @@ public class EstanteDAO {
 		Estante estanteOnce = new Estante("Estante N°11", estante);
 		alEstante.add(estanteOnce);
 
-		estante.clear();
-		estante.add(uno);
-		estante.add(dos);
-		estante.add(tres);
-		estante.add(cuatro);
-		estante.add(cinco);
-		estante.add(seis);
-		estante.add(siete);
-		estante.add(ocho);
-		estante.add(nueve);
-		estante.add(diez);
-		estante.add(once);
+		List<List<List<Producto>>> cajonero = new ArrayList<List<List<Producto>>>();
+		List<List<Producto>> unoCajonero = new ArrayList<List<Producto>>();
+		List<List<Producto>> dosCajonero = new ArrayList<List<Producto>>();
+		List<List<Producto>> tresCajonero = new ArrayList<List<Producto>>();
+		List<List<Producto>> cuatroCajonero = new ArrayList<List<Producto>>();
+		List<List<Producto>> cincoCajonero = new ArrayList<List<Producto>>();
+		List<List<Producto>> seisCajonero = new ArrayList<List<Producto>>();
+		List<List<Producto>> sieteCajonero = new ArrayList<List<Producto>>();
+		List<List<Producto>> ochoCajonero = new ArrayList<List<Producto>>();
+		List<List<Producto>> nueveCajonero = new ArrayList<List<Producto>>();
+		List<List<Producto>> diezCajonero = new ArrayList<List<Producto>>();
+		List<List<Producto>> onceCajonero = new ArrayList<List<Producto>>();
 
-		Estante Cajonero = new Estante("Cajonero", estante);
-		alEstante.add(Cajonero);
+		unoCajonero.add(uno);
+		unoCajonero.add(dos);
+		unoCajonero.add(tres);
+		unoCajonero.add(cuatro);
+		unoCajonero.add(cinco);
+		unoCajonero.add(seis);
+		unoCajonero.add(siete);
+		unoCajonero.add(ocho);
+		unoCajonero.add(nueve);
+		unoCajonero.add(diez);
+		unoCajonero.add(once);
+		unoCajonero.add(doce);
+		unoCajonero.add(trece);
+		unoCajonero.add(catorce);
+
+		dosCajonero.add(uno);
+		dosCajonero.add(dos);
+		dosCajonero.add(tres);
+		dosCajonero.add(cuatro);
+		dosCajonero.add(cinco);
+		dosCajonero.add(seis);
+		dosCajonero.add(siete);
+		dosCajonero.add(ocho);
+		dosCajonero.add(nueve);
+		dosCajonero.add(diez);
+		dosCajonero.add(once);
+		dosCajonero.add(doce);
+		dosCajonero.add(trece);
+		dosCajonero.add(catorce);
+
+		tresCajonero.add(uno);
+		tresCajonero.add(dos);
+		tresCajonero.add(tres);
+		tresCajonero.add(cuatro);
+		tresCajonero.add(cinco);
+		tresCajonero.add(seis);
+		tresCajonero.add(siete);
+		tresCajonero.add(ocho);
+
+		cuatroCajonero.add(uno);
+		cuatroCajonero.add(dos);
+		cuatroCajonero.add(tres);
+		cuatroCajonero.add(cuatro);
+		cuatroCajonero.add(cinco);
+		cuatroCajonero.add(seis);
+		cuatroCajonero.add(siete);
+		cuatroCajonero.add(ocho);
+		cuatroCajonero.add(nueve);
+		cuatroCajonero.add(diez);
+		cuatroCajonero.add(once);
+		cuatroCajonero.add(doce);
+		cuatroCajonero.add(trece);
+		cuatroCajonero.add(catorce);
+
+		cincoCajonero.add(uno);
+		cincoCajonero.add(dos);
+		cincoCajonero.add(tres);
+		cincoCajonero.add(cuatro);
+		cincoCajonero.add(cinco);
+		cincoCajonero.add(seis);
+		cincoCajonero.add(siete);
+		cincoCajonero.add(ocho);
+		cincoCajonero.add(nueve);
+		cincoCajonero.add(diez);
+		cincoCajonero.add(once);
+		cincoCajonero.add(doce);
+		cincoCajonero.add(trece);
+		cincoCajonero.add(catorce);
+
+		seisCajonero.add(uno);
+		seisCajonero.add(dos);
+		seisCajonero.add(tres);
+		seisCajonero.add(cuatro);
+		seisCajonero.add(cinco);
+		seisCajonero.add(seis);
+		seisCajonero.add(siete);
+		seisCajonero.add(ocho);
+
+		sieteCajonero.add(uno);
+		sieteCajonero.add(dos);
+		sieteCajonero.add(tres);
+		sieteCajonero.add(cuatro);
+		sieteCajonero.add(cinco);
+		sieteCajonero.add(seis);
+		sieteCajonero.add(siete);
+		sieteCajonero.add(ocho);
+		sieteCajonero.add(nueve);
+		sieteCajonero.add(diez);
+		sieteCajonero.add(once);
+		sieteCajonero.add(doce);
+		sieteCajonero.add(trece);
+		sieteCajonero.add(catorce);
+
+		ochoCajonero.add(uno);
+		ochoCajonero.add(dos);
+		ochoCajonero.add(tres);
+		ochoCajonero.add(cuatro);
+		ochoCajonero.add(cinco);
+		ochoCajonero.add(seis);
+		ochoCajonero.add(siete);
+		ochoCajonero.add(ocho);
+		ochoCajonero.add(nueve);
+		ochoCajonero.add(diez);
+		ochoCajonero.add(once);
+		ochoCajonero.add(doce);
+		ochoCajonero.add(trece);
+		ochoCajonero.add(catorce);
+
+		nueveCajonero.add(uno);
+		nueveCajonero.add(dos);
+		nueveCajonero.add(tres);
+		nueveCajonero.add(cuatro);
+		nueveCajonero.add(cinco);
+		nueveCajonero.add(seis);
+		nueveCajonero.add(siete);
+		nueveCajonero.add(ocho);
+
+		diezCajonero.add(uno);
+		diezCajonero.add(dos);
+		diezCajonero.add(tres);
+		diezCajonero.add(cuatro);
+		diezCajonero.add(cinco);
+		diezCajonero.add(seis);
+		diezCajonero.add(siete);
+		diezCajonero.add(ocho);
+		diezCajonero.add(nueve);
+		diezCajonero.add(diez);
+		diezCajonero.add(once);
+		diezCajonero.add(doce);
+		diezCajonero.add(trece);
+		diezCajonero.add(catorce);
+
+		onceCajonero.add(uno);
+		onceCajonero.add(dos);
+		onceCajonero.add(tres);
+		onceCajonero.add(cuatro);
+		onceCajonero.add(cinco);
+		onceCajonero.add(seis);
+		onceCajonero.add(siete);
+		onceCajonero.add(ocho);
+		onceCajonero.add(nueve);
+		onceCajonero.add(diez);
+		onceCajonero.add(once);
+		onceCajonero.add(doce);
+		onceCajonero.add(trece);
+		onceCajonero.add(catorce);
+
+		cajonero.add(unoCajonero);
+		cajonero.add(dosCajonero);
+		cajonero.add(tresCajonero);
+		cajonero.add(cuatroCajonero);
+		cajonero.add(cincoCajonero);
+		cajonero.add(seisCajonero);
+		cajonero.add(sieteCajonero);
+		cajonero.add(ochoCajonero);
+		cajonero.add(nueveCajonero);
+		cajonero.add(diezCajonero);
+		cajonero.add(onceCajonero);
+
+		Cajonero Cajonero = new Cajonero(cajonero);
+		alCajonero.add(Cajonero);
 
 		archivo.escribirEnArchivo(alEstante, file);
+		archivo.escribirEnArchivoCajonero(alCajonero, file);
 
 	}
 

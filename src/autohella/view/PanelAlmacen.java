@@ -21,6 +21,7 @@ public class PanelAlmacen extends JPanel {
 
 	private JButton btnMinimizar, btnCerrar, btnEstante, btnEstante2, btnEstante3, btnEstante4, btnEstante5,
 			btnEstante6, btnEstante7, btnEstante8, btnEstante9, btnEstante10, btnEstante11, btnCajonero, btnSalir;
+	private Boton btnInicio;
 
 	public PanelAlmacen() {
 
@@ -202,6 +203,18 @@ public class PanelAlmacen extends JPanel {
 		btnSalir.setActionCommand("Salir");
 		add(btnSalir);
 
+		img = new ImageIcon("recursos/inicio.png");
+		recImg = new ImageIcon(img.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+		btnInicio = new Boton();
+		btnInicio.setBounds(13, 590, 100, 100);
+		btnInicio.setBorderPainted(false);
+		btnInicio.setContentAreaFilled(false);
+		btnInicio.setFocusPainted(false);
+		btnInicio.setIcon(recImg);
+		btnInicio.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		btnInicio.setActionCommand("Inicio");
+		add(btnInicio);
+
 		texto = new JTextArea("Por favor seleccioné el lugar donde se guardará el repuesto.");
 		texto.setEditable(false);
 		texto.setLineWrap(true);
@@ -262,6 +275,22 @@ public class PanelAlmacen extends JPanel {
 
 	public void setLblImagenFondo(JLabel lblImagenFondo) {
 		this.lblImagenFondo = lblImagenFondo;
+	}
+
+	public JTextArea getTexto() {
+		return texto;
+	}
+
+	public void setTexto(JTextArea texto) {
+		this.texto = texto;
+	}
+
+	public JScrollPane getScrool() {
+		return scrool;
+	}
+
+	public void setScrool(JScrollPane scrool) {
+		this.scrool = scrool;
 	}
 
 	public JButton getBtnMinimizar() {
@@ -382,6 +411,14 @@ public class PanelAlmacen extends JPanel {
 
 	public void setBtnSalir(JButton btnSalir) {
 		this.btnSalir = btnSalir;
+	}
+
+	public Boton getBtnInicio() {
+		return btnInicio;
+	}
+
+	public void setBtnInicio(Boton btnInicio) {
+		this.btnInicio = btnInicio;
 	}
 
 }

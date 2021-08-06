@@ -22,6 +22,7 @@ public class PanelVista extends JPanel {
 	private Font fuente1;
 	private JTextField txtReferencia, txtNombre, txtMarca, txtDescripcion, txtPrecio, txtCantidad;
 	private Boton btnEditar, btnEliminar, btnAlmacen;
+	private Boton btnInicio;
 
 	private PanelTabla panelTabla;
 
@@ -127,9 +128,20 @@ public class PanelVista extends JPanel {
 		txtCantidad.setFont(fuente1);
 		add(txtCantidad);
 
+		img = new ImageIcon("recursos/inicio.png");
+		recImg = new ImageIcon(img.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+		btnInicio = new Boton();
+		btnInicio.setBounds(13, 590, 100, 100);
+		btnInicio.setBorderPainted(false);
+		btnInicio.setContentAreaFilled(false);
+		btnInicio.setFocusPainted(false);
+		btnInicio.setIcon(recImg);
+		btnInicio.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		btnInicio.setActionCommand("Inicio");
+		add(btnInicio);
+
 		panelTabla = new PanelTabla();
 		panelTabla.setBounds(480, 145, 700, 300);
-
 		add(panelTabla);
 
 		fondo = new ImageIcon(getClass().getResource("/imagenes/fondoVintage.jpg"));
@@ -274,6 +286,14 @@ public class PanelVista extends JPanel {
 
 	public void setBtnAlmacen(Boton btnAlmacen) {
 		this.btnAlmacen = btnAlmacen;
+	}
+
+	public Boton getBtnInicio() {
+		return btnInicio;
+	}
+
+	public void setBtnInicio(Boton btnInicio) {
+		this.btnInicio = btnInicio;
 	}
 
 	public PanelTabla getPanelTabla() {

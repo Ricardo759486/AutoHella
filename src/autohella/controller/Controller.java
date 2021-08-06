@@ -5,8 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import autohella.model.Estante;
 import autohella.model.Producto;
@@ -60,6 +62,7 @@ public class Controller implements ActionListener {
 		ventanaPrincipal.getPanelAlmacen().getBtnEstante11().addActionListener(this);
 		ventanaPrincipal.getPanelAlmacen().getBtnCajonero().addActionListener(this);
 		ventanaPrincipal.getPanelAlmacen().getBtnSalir().addActionListener(this);
+		ventanaPrincipal.getPanelAlmacen().getBtnInicio().addActionListener(this);
 
 		ventanaPrincipal.getPanelEntrada().getBtnCerrar().addActionListener(this);
 		ventanaPrincipal.getPanelEntrada().getBtnMinimizar().addActionListener(this);
@@ -72,9 +75,11 @@ public class Controller implements ActionListener {
 		ventanaPrincipal.getPanelEntrada().getBtnCorreas2().addActionListener(this);
 		ventanaPrincipal.getPanelEntrada().getBtnBateria().addActionListener(this);
 		ventanaPrincipal.getPanelEntrada().getBtnEntrar().addActionListener(this);
+		ventanaPrincipal.getPanelEntrada().getBtnInicio().addActionListener(this);
 
 		ventanaPrincipal.getPanelVista().getBtnCerrar().addActionListener(this);
 		ventanaPrincipal.getPanelVista().getBtnMinimizar().addActionListener(this);
+		ventanaPrincipal.getPanelVista().getBtnInicio().addActionListener(this);
 
 		ventanaPrincipal.getPanelinicio().getBtnCerrar().addActionListener(this);
 		ventanaPrincipal.getPanelinicio().getBtnMinimizar().addActionListener(this);
@@ -86,6 +91,10 @@ public class Controller implements ActionListener {
 		ventanaPrincipal.getPanelRegistro().getBtnMinimizar().addActionListener(this);
 		ventanaPrincipal.getPanelRegistro().getBtnRegistro().addActionListener(this);
 		ventanaPrincipal.getPanelRegistro().getBtnEditar().addActionListener(this);
+		ventanaPrincipal.getPanelRegistro().getBtnInicio().addActionListener(this);
+		
+		ventanaPrincipal.getPanelPuestos().getBtnCerrar().addActionListener(this);
+		ventanaPrincipal.getPanelPuestos().getBtnMinimizar().addActionListener(this);
 	}
 
 	@Override
@@ -98,6 +107,14 @@ public class Controller implements ActionListener {
 
 		} else if (comando.equals("CERRARVENTANA")) {
 			System.exit(0);
+		}
+
+		if (comando.equals("Inicio")) {
+			ventanaPrincipal.getPanelinicio().setVisible(true);
+			ventanaPrincipal.getPanelAlmacen().setVisible(false);
+			ventanaPrincipal.getPanelEntrada().setVisible(false);
+			ventanaPrincipal.getPanelRegistro().setVisible(false);
+			ventanaPrincipal.getPanelVista().setVisible(false);
 		}
 
 //------------------------------------------Panel Principal-------------------------------------
@@ -113,6 +130,19 @@ public class Controller implements ActionListener {
 			ventanaPrincipal.getPanelVista().setVisible(true);
 			ventanaPrincipal.getPanelVista().getPanelTabla()
 					.actualizarTabla(estante.generarTablaApostador(estanteDAO.NumeroProducto(alEstante), alEstante));
+			ventanaPrincipal.getPanelinicio().setVisible(false);
+		}
+
+		if (comando.equals("Registro")) {
+			
+			ventanaPrincipal.getPanelRegistro().getTxtReferencia().setText("");
+			ventanaPrincipal.getPanelRegistro().getTxtNombre().setText("");
+			ventanaPrincipal.getPanelRegistro().getTxtMarca().setText("");
+			ventanaPrincipal.getPanelRegistro().getTxtDescripcion().setText("");
+			ventanaPrincipal.getPanelRegistro().getTxtPrecio().setText("");
+			ventanaPrincipal.getPanelRegistro().getTxtCantidad().setText("");
+
+			ventanaPrincipal.getPanelRegistro().setVisible(true);
 			ventanaPrincipal.getPanelinicio().setVisible(false);
 		}
 
@@ -133,6 +163,56 @@ public class Controller implements ActionListener {
 
 			ventanaPrincipal.getPanelEntrada().setVisible(true);
 			ventanaPrincipal.getPanelAlmacen().setVisible(false);
+		}
+
+//----------------------------------------------------------------------------------------------
+
+//------------------------------------------Panel Registro-------------------------------------
+
+		if (comando.equals("Registrar")) {
+
+			if (!"".equals(ventanaPrincipal.getPanelRegistro().getTxtReferencia().getText())
+					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtNombre().getText())
+					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtMarca().getText())
+					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtDescripcion().getText())
+					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtPrecio().getText())
+					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtCantidad().getText())) {
+
+				String pReferencia = ventanaPrincipal.getPanelRegistro().getTxtReferencia().getText();
+				String pNombre = ventanaPrincipal.getPanelRegistro().getTxtNombre().getText();
+				String pMarca = ventanaPrincipal.getPanelRegistro().getTxtMarca().getText();
+				String pDescripcion = ventanaPrincipal.getPanelRegistro().getTxtDescripcion().getText();
+				int pPrecio = Integer.parseInt(ventanaPrincipal.getPanelRegistro().getTxtPrecio().getText());
+				int pCantidad = Integer.parseInt(ventanaPrincipal.getPanelRegistro().getTxtCantidad().getText());
+
+				Producto producto = new Producto(pReferencia, pNombre, pMarca, pDescripcion, pPrecio, pCantidad);
+
+				if (estanteDAO.agregarProducto(producto, pNombre, pCantidad, alEstante, fileEstante)) {
+
+					JOptionPane.showMessageDialog(null, "Registro con éxito", "Información",
+							JOptionPane.INFORMATION_MESSAGE);
+
+					ventanaPrincipal.getPanelRegistro().getTxtReferencia().setText("");
+					ventanaPrincipal.getPanelRegistro().getTxtNombre().setText("");
+					ventanaPrincipal.getPanelRegistro().getTxtMarca().setText("");
+					ventanaPrincipal.getPanelRegistro().getTxtDescripcion().setText("");
+					ventanaPrincipal.getPanelRegistro().getTxtPrecio().setText("");
+					ventanaPrincipal.getPanelRegistro().getTxtCantidad().setText("");
+				} else {
+					
+					JOptionPane.showMessageDialog(null,
+							"Ya existe un producto con esa referencia/nPor favor verifique.", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
+
+			} else {
+				JOptionPane.showMessageDialog(null, "No puede dejar campos sin llenar", "Error",
+						JOptionPane.WARNING_MESSAGE);
+			}
+		}
+
+		if (comando.equals("Editar")) {
+
 		}
 
 //----------------------------------------------------------------------------------------------
