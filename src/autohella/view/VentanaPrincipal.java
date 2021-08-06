@@ -15,7 +15,8 @@ public class VentanaPrincipal extends JFrame {
 	public VentanaPrincipal() {
 
 		setTitle("Inventario - Auto Hella");
-		setSize(1200, 700);
+		//setSize(1200, 700);
+		setSize(1350, 700);
 		setUndecorated(true);
 		setIconImage(new ImageIcon("recursos/autoHellaLogo.jpg").getImage());
 		inicializarComponentes();
