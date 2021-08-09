@@ -184,26 +184,28 @@ public class Controller implements ActionListener {
 				String pDescripcion = ventanaPrincipal.getPanelRegistro().getTxtDescripcion().getText();
 				int pPrecio = Integer.parseInt(ventanaPrincipal.getPanelRegistro().getTxtPrecio().getText());
 				int pCantidad = Integer.parseInt(ventanaPrincipal.getPanelRegistro().getTxtCantidad().getText());
+				
+				
 
-				Producto producto = new Producto(pReferencia, pNombre, pMarca, pDescripcion, pPrecio, pCantidad);
-
-				if (estanteDAO.agregarProducto(producto, pNombre, pCantidad, alEstante, fileEstante)) {
-
-					JOptionPane.showMessageDialog(null, "Registro con éxito", "Información",
-							JOptionPane.INFORMATION_MESSAGE);
-
-					ventanaPrincipal.getPanelRegistro().getTxtReferencia().setText("");
-					ventanaPrincipal.getPanelRegistro().getTxtNombre().setText("");
-					ventanaPrincipal.getPanelRegistro().getTxtMarca().setText("");
-					ventanaPrincipal.getPanelRegistro().getTxtDescripcion().setText("");
-					ventanaPrincipal.getPanelRegistro().getTxtPrecio().setText("");
-					ventanaPrincipal.getPanelRegistro().getTxtCantidad().setText("");
-				} else {
-					
-					JOptionPane.showMessageDialog(null,
-							"Ya existe un producto con esa referencia/nPor favor verifique.", "Error",
-							JOptionPane.ERROR_MESSAGE);
-				}
+//				Producto producto = new Producto(pReferencia, pNombre, pMarca, pDescripcion, pPrecio, pCantidad);
+//
+//				if (estanteDAO.agregarProducto(producto, pNombre, pCantidad, alEstante, fileEstante)) {
+//
+//					JOptionPane.showMessageDialog(null, "Registro con éxito", "Información",
+//							JOptionPane.INFORMATION_MESSAGE);
+//
+//					ventanaPrincipal.getPanelRegistro().getTxtReferencia().setText("");
+//					ventanaPrincipal.getPanelRegistro().getTxtNombre().setText("");
+//					ventanaPrincipal.getPanelRegistro().getTxtMarca().setText("");
+//					ventanaPrincipal.getPanelRegistro().getTxtDescripcion().setText("");
+//					ventanaPrincipal.getPanelRegistro().getTxtPrecio().setText("");
+//					ventanaPrincipal.getPanelRegistro().getTxtCantidad().setText("");
+//				} else {
+//					
+//					JOptionPane.showMessageDialog(null,
+//							"Ya existe un producto con esa referencia/nPor favor verifique.", "Error",
+//							JOptionPane.ERROR_MESSAGE);
+//				}
 
 			} else {
 				JOptionPane.showMessageDialog(null, "No puede dejar campos sin llenar", "Error",
