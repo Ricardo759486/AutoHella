@@ -227,6 +227,7 @@ public class PanelAlmacen extends JPanel {
 		scrool.setOpaque(false);
 		scrool.getViewport().setOpaque(false);
 		scrool.setBounds(130, 120, 320, 150);
+		scrool.setVisible(false);
 		add(scrool);
 
 		fondo = new ImageIcon(getClass().getResource("/imagenes/fondoEntrada.jpg"));

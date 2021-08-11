@@ -103,6 +103,18 @@ public class PanelEntrada extends JPanel {
 		btnVitrinaGrande.setActionCommand("VitrinaGrande");
 		add(btnVitrinaGrande);
 
+		img = new ImageIcon("recursos/bateria.png");
+		recImg = new ImageIcon(img.getImage().getScaledInstance(179, 126, Image.SCALE_DEFAULT));
+		btnBateria = new JButton();
+		btnBateria.setBounds(20, 170, 179, 126);
+		btnBateria.setBorderPainted(false);
+		btnBateria.setContentAreaFilled(false);
+		btnBateria.setFocusPainted(false);
+		btnBateria.setIcon(recImg);
+		btnBateria.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		btnBateria.setActionCommand("Bateria");
+		add(btnBateria);
+
 		img = new ImageIcon("recursos/Vitrina.jpg");
 		recImg = new ImageIcon(img.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
 		btnVitrina3 = new JButton();
@@ -138,18 +150,6 @@ public class PanelEntrada extends JPanel {
 		btnCorreas2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnCorreas2.setActionCommand("Correas2");
 		add(btnCorreas2);
-
-		img = new ImageIcon("recursos/bateria.png");
-		recImg = new ImageIcon(img.getImage().getScaledInstance(179, 126, Image.SCALE_DEFAULT));
-		btnBateria = new JButton();
-		btnBateria.setBounds(20, 170, 179, 126);
-		btnBateria.setBorderPainted(false);
-		btnBateria.setContentAreaFilled(false);
-		btnBateria.setFocusPainted(false);
-		btnBateria.setIcon(recImg);
-		btnBateria.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		btnBateria.setActionCommand("Bateria");
-		add(btnBateria);
 
 		img = new ImageIcon("recursos/entrar.png");
 		recImg = new ImageIcon(img.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
@@ -187,6 +187,7 @@ public class PanelEntrada extends JPanel {
 		scrool.setOpaque(false);
 		scrool.getViewport().setOpaque(false);
 		scrool.setBounds(440, 220, 320, 150);
+		scrool.setVisible(false);
 		add(scrool);
 
 		fondo = new ImageIcon(getClass().getResource("/imagenes/fondoEntrada.jpg"));

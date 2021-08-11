@@ -134,8 +134,6 @@ public class EstanteDAO {
 		estante.add(cinco);
 		estante.add(seis);
 		estante.add(siete);
-		estante.add(ocho);
-		estante.add(nueve);
 
 		Estante correasDerivados = new Estante("Correas y Derivados", estante);
 		alEstante.add(correasDerivados);

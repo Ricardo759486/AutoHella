@@ -14,10 +14,10 @@ import javax.swing.JTextArea;
 
 public class PanelPuestos extends JPanel {
 
-	private ImageIcon fondo, recFondo, img, recImg;
+	private ImageIcon fondo, recFondo, img, recImg, imgPuesto, recImgPuesto1, recImgPuesto2, recImgPuesto3;
 
-	private JLabel lblImagenFondo, lblVitrinaDerecha, lblVitrinaCentral, lblBaterias, lblVitrinaTrasera, lblCorreas,
-			lblEstante5, lblEstante6, lblEstante7, lblEstante8;
+	private JLabel lblImagenFondo, lblVitrinaDerecha, lblVitrinaCentral, lblVitrinaIzquierda, lblBaterias,
+			lblVitrinaTrasera, lblCorreas, lblEstante5, lblEstante6, lblEstante7, lblEstante8;
 	private JTextArea texto, cajonero;
 	private JScrollPane scrool;
 
@@ -82,24 +82,28 @@ public class PanelPuestos extends JPanel {
 
 //------------------------------------Estantes-------------------------------------------------------------------
 
-		img = new ImageIcon("recursos/ubicacion.png");
-// recImg = new ImageIcon(img.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));-----VitrinaDerecha
-// recImg = new ImageIcon(img.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));-----VitrinaCentral
-// recImg = new ImageIcon(img.getImage().getScaledInstance(35, 35, Image.SCALE_DEFAULT));-----VitrinaIzquierda
-// recImg = new ImageIcon(img.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));-----Bateria
-// recImg = new ImageIcon(img.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));-----VitrinaTracera
-// recImg = new ImageIcon(img.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));-----Correas
-// recImg = new ImageIcon(img.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));-----EstanteN°1-2-3-4
-// recImg = new ImageIcon(img.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));-----EstanteN°6
-// recImg = new ImageIcon(img.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));-----EstanteN°7-8-9-10-11
+		imgPuesto = new ImageIcon("recursos/ubicacion.png");
+		recImgPuesto1 = new ImageIcon(imgPuesto.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));// -----VitrinaDerecha
+																											// - Bateria
+																											// - Correas
+																											// -
+																											// EstanteN°1-2-3-4-7-8-9-10-11
+
+		recImgPuesto2 = new ImageIcon(imgPuesto.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));// -----VitrinaCentral
+																											// -
+																											// VitrinaTracera
+																											// -
+																											// EstanteN°6
+
+		recImgPuesto3 = new ImageIcon(imgPuesto.getImage().getScaledInstance(35, 35, Image.SCALE_DEFAULT));// -----VitrinaIzquierda
 
 		btnLugar1 = new Boton();
-// btnLugar1.setBounds(440, 108, 60, 60);-----VitrinaDerecha
-// btnLugar1.setBounds(400, 203, 60, 60);-----VitrinaCentral
-// btnLugar1.setBounds(415, 165, 35, 35);-----VitrinaIzquierda
-// btnLugar1.setBounds(425, 117, 50, 50);-----Baterias
-// btnLugar1.setBounds(400, 225, 60, 60);-----VitrinaTracera
-// btnLugar1.setBounds(360, 155, 50, 50);-----Correas
+// btnLugar1.setBounds(440, 108, 60, 60);//-----VitrinaDerecha
+// btnLugar1.setBounds(400, 203, 60, 60);//-----VitrinaCentral
+// btnLugar1.setBounds(415, 165, 35, 35);//-----VitrinaIzquierda
+// btnLugar1.setBounds(425, 117, 50, 50);//-----Baterias
+// btnLugar1.setBounds(400, 225, 60, 60);//-----VitrinaTracera
+// btnLugar1.setBounds(360, 155, 50, 50);//-----Correas
 // btnLugar1.setBounds(410, 80, 50, 50);-----Estante N° 1-2
 // btnLugar1.setBounds(425, 70, 50, 50);-----Estante N° 3-4-5-10
 // btnLugar1.setBounds(400, 80, 60, 60);-----Estante N° 6-9-11
@@ -107,18 +111,19 @@ public class PanelPuestos extends JPanel {
 		btnLugar1.setBorderPainted(false);
 		btnLugar1.setContentAreaFilled(false);
 		btnLugar1.setFocusPainted(false);
-		btnLugar1.setIcon(recImg);
+		btnLugar1.setIcon(recImgPuesto1);
 		btnLugar1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnLugar1.setActionCommand("lugar1");
+		btnLugar1.setVisible(false);
 		add(btnLugar1);
 
 		btnLugar2 = new Boton();
-// btnLugar2.setBounds(440, 163, 60, 60);-----VitrinaDerecha
-// btnLugar2.setBounds(400, 300, 60, 60);-----VitrinaCentral
-// btnLugar2.setBounds(415, 220, 35, 35);-----VitrinaIzquierda
-// btnLugar2.setBounds(425, 195, 50, 50);-----Baterias
-// btnLugar2.setBounds(400, 315, 60, 60);-----VitrinaTracera
-// btnLugar2.setBounds(360, 215, 50, 50);-----Correas
+// btnLugar2.setBounds(440, 163, 60, 60);//-----VitrinaDerecha
+// btnLugar2.setBounds(400, 300, 60, 60);//-----VitrinaCentral
+// btnLugar2.setBounds(415, 220, 35, 35);//-----VitrinaIzquierda
+// btnLugar2.setBounds(425, 195, 50, 50);//-----Baterias
+// btnLugar2.setBounds(400, 315, 60, 60);//-----VitrinaTracera
+// btnLugar2.setBounds(360, 215, 50, 50);//-----Correas
 // btnLugar2.setBounds(410, 160, 50, 50);-----Estante N° 1-2
 // btnLugar2.setBounds(425, 143, 50, 50);-----Estante N° 3-4-5-10
 // btnLugar2.setBounds(400, 175, 60, 60);-----Estante N° 6-9-11
@@ -126,18 +131,19 @@ public class PanelPuestos extends JPanel {
 		btnLugar2.setBorderPainted(false);
 		btnLugar2.setContentAreaFilled(false);
 		btnLugar2.setFocusPainted(false);
-		btnLugar2.setIcon(recImg);
+		btnLugar2.setIcon(recImgPuesto1);
 		btnLugar2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnLugar2.setActionCommand("lugar2");
+		btnLugar2.setVisible(false);
 		add(btnLugar2);
 
 		btnLugar3 = new Boton();
-// btnLugar3.setBounds(440, 230, 60, 60);-----VitrinaDerecha
-// btnLugar3.setBounds(400, 390, 60, 60);-----VitrinaCentral
-// btnLugar3.setBounds(415, 260, 35, 35);-----VitrinaIzquierda
-// btnLugar3.setBounds(425, 275, 50, 50);-----Baterias
-// btnLugar3.setBounds(400, 410, 60, 60);-----VitrinaTracera
-// btnLugar3.setBounds(360, 270, 50, 50);-----Correas
+// btnLugar3.setBounds(440, 230, 60, 60);//-----VitrinaDerecha
+// btnLugar3.setBounds(400, 390, 60, 60);//-----VitrinaCentral
+// btnLugar3.setBounds(415, 260, 35, 35);//-----VitrinaIzquierda
+// btnLugar3.setBounds(425, 275, 50, 50);//-----Baterias
+// btnLugar3.setBounds(400, 410, 60, 60);//-----VitrinaTracera
+// btnLugar3.setBounds(360, 270, 50, 50);//-----Correas
 // btnLugar3.setBounds(410, 240, 50, 50);-----Estante N° 1-2
 // btnLugar3.setBounds(425, 213, 50, 50);-----Estante N° 3-4-5-10
 // btnLugar3.setBounds(400, 268, 60, 60);-----Estante N° 6-9-11
@@ -145,17 +151,18 @@ public class PanelPuestos extends JPanel {
 		btnLugar3.setBorderPainted(false);
 		btnLugar3.setContentAreaFilled(false);
 		btnLugar3.setFocusPainted(false);
-		btnLugar3.setIcon(recImg);
+		btnLugar3.setIcon(recImgPuesto1);
 		btnLugar3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnLugar3.setActionCommand("lugar3");
+		btnLugar3.setVisible(false);
 		add(btnLugar3);
 
 		btnLugar4 = new Boton();
-// btnLugar4.setBounds(440, 290, 60, 60);-----VitrinaDerecha
-// btnLugar4.setBounds(400, 480, 60, 60);-----VitrinaCentral
-// btnLugar4.setBounds(415, 305, 35, 35);-----VitrinaIzquierda
-// btnLugar4.setBounds(425, 350, 50, 50);-----Baterias
-// btnLugar4.setBounds(360, 320, 50, 50);-----Correas
+// btnLugar4.setBounds(440, 290, 60, 60);//-----VitrinaDerecha
+// btnLugar4.setBounds(400, 480, 60, 60);//-----VitrinaCentral
+// btnLugar4.setBounds(415, 305, 35, 35);//-----VitrinaIzquierda
+// btnLugar4.setBounds(425, 350, 50, 50);//-----Baterias
+// btnLugar4.setBounds(360, 320, 50, 50);//-----Correas
 // btnLugar4.setBounds(410, 325, 50, 50);-----Estante N° 1-2
 // btnLugar4.setBounds(425, 285, 50, 50);-----Estante N° 3-4-5-10
 // btnLugar4.setBounds(400, 363, 60, 60);-----Estante N° 6-9-11
@@ -163,17 +170,17 @@ public class PanelPuestos extends JPanel {
 		btnLugar4.setBorderPainted(false);
 		btnLugar4.setContentAreaFilled(false);
 		btnLugar4.setFocusPainted(false);
-		btnLugar4.setIcon(recImg);
+		btnLugar4.setIcon(recImgPuesto1);
 		btnLugar4.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnLugar4.setActionCommand("lugar4");
+		btnLugar4.setVisible(false);
 		add(btnLugar4);
 
 		btnLugar5 = new Boton();
-// btnLugar5.setBounds(440, 353, 60, 60);-----VitrinaDerecha
-// btnLugar5.setBounds(440, 353, 60, 60);-----VitrinaCentral
-// btnLugar5.setBounds(415, 350, 35, 35);-----VitrinaIzquierda
-// btnLugar5.setBounds(425, 430, 50, 50);-----Baterias
-// btnLugar5.setBounds(360, 375, 50, 50);-----Correas
+// btnLugar5.setBounds(440, 353, 60, 60);//-----VitrinaDerecha
+// btnLugar5.setBounds(415, 350, 35, 35);//-----VitrinaIzquierda
+// btnLugar5.setBounds(425, 430, 50, 50);//-----Baterias
+// btnLugar5.setBounds(360, 375, 50, 50);//-----Correas
 // btnLugar5.setBounds(410, 405, 50, 50);-----Estante N° 1-2
 // btnLugar5.setBounds(425, 359, 50, 50);-----Estante N° 3-4-5-10
 // btnLugar5.setBounds(400, 459, 60, 60);-----Estante N° 6-9-11
@@ -181,54 +188,55 @@ public class PanelPuestos extends JPanel {
 		btnLugar5.setBorderPainted(false);
 		btnLugar5.setContentAreaFilled(false);
 		btnLugar5.setFocusPainted(false);
-		btnLugar5.setIcon(recImg);
+		btnLugar5.setIcon(recImgPuesto1);
 		btnLugar5.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnLugar5.setActionCommand("lugar5");
+		btnLugar5.setVisible(false);
 		add(btnLugar5);
 
 		btnLugar6 = new Boton();
-// btnLugar6.setBounds(440, 415, 60, 60);-----VitrinaDerecha
-// btnLugar6.setBounds(440, 415, 60, 60);-----VitrinaCentral
-// btnLugar6.setBounds(415, 400, 35, 35);-----VitrinaIzquierda
-// btnLugar6.setBounds(425, 510, 50, 50);-----Baterias
-// btnLugar6.setBounds(360, 430, 50, 50);-----Correas
+// btnLugar6.setBounds(440, 415, 60, 60);//-----VitrinaDerecha
+// btnLugar6.setBounds(415, 400, 35, 35);//-----VitrinaIzquierda
+// btnLugar6.setBounds(425, 510, 50, 50);//-----Baterias
+// btnLugar6.setBounds(360, 430, 50, 50);//-----Correas
 // btnLugar6.setBounds(410, 485, 50, 50);-----Estante N° 1-2
 // btnLugar6.setBounds(425, 430, 50, 50);-----Estante N° 3-4-5-10
 // btnLugar6.setBounds(400, 555, 60, 60);-----Estante N° 6-9-11
 		btnLugar6.setBorderPainted(false);
 		btnLugar6.setContentAreaFilled(false);
 		btnLugar6.setFocusPainted(false);
-		btnLugar6.setIcon(recImg);
+		btnLugar6.setIcon(recImgPuesto1);
 		btnLugar6.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnLugar6.setActionCommand("lugar6");
+		btnLugar6.setVisible(false);
 		add(btnLugar6);
 
 		btnLugar7 = new Boton();
-// btnLugar7.setBounds(440, 475, 60, 60);-----VitrinaDerecha
-// btnLugar7.setBounds(440, 475, 60, 60);-----VitrinaCentral
-// btnLugar7.setBounds(415, 445, 35, 35);-----VitrinaIzquierda
-// btnLugar7.setBounds(360, 491, 50, 50);-----Correas
+// btnLugar7.setBounds(440, 475, 60, 60);//-----VitrinaDerecha
+// btnLugar7.setBounds(415, 445, 35, 35);//-----VitrinaIzquierda
+// btnLugar7.setBounds(360, 491, 50, 50);//-----Correas
 // btnLugar7.setBounds(410, 565, 50, 50);-----Estante N° 1-2
 // btnLugar7.setBounds(425, 505, 50, 50);-----Estante N° 3-4-5-10
 		btnLugar7.setBorderPainted(false);
 		btnLugar7.setContentAreaFilled(false);
 		btnLugar7.setFocusPainted(false);
-		btnLugar7.setIcon(recImg);
+		btnLugar7.setIcon(recImgPuesto1);
 		btnLugar7.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnLugar7.setActionCommand("lugar7");
+		btnLugar7.setVisible(false);
 		add(btnLugar7);
 
 		btnLugar8 = new Boton();
-// btnLugar8.setBounds(440, 540, 60, 60);-----VitrinaDerecha
-// btnLugar8.setBounds(440, 540, 60, 60);-----VitrinaCentral
-// btnLugar8.setBounds(415, 495, 35, 35);-----VitrinaIzquierda
+// btnLugar8.setBounds(440, 540, 60, 60);//-----VitrinaDerecha
+// btnLugar8.setBounds(415, 495, 35, 35);//-----VitrinaIzquierda
 // btnLugar8.setBounds(425, 577, 50, 50);-----Estante N° 3-4-5-10
 		btnLugar8.setBorderPainted(false);
 		btnLugar8.setContentAreaFilled(false);
 		btnLugar8.setFocusPainted(false);
-		btnLugar8.setIcon(recImg);
+		btnLugar8.setIcon(recImgPuesto1);
 		btnLugar8.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnLugar8.setActionCommand("lugar8");
+		btnLugar8.setVisible(false);
 		add(btnLugar8);
 
 		btnLugar9 = new Boton();
@@ -236,9 +244,10 @@ public class PanelPuestos extends JPanel {
 		btnLugar9.setBorderPainted(false);
 		btnLugar9.setContentAreaFilled(false);
 		btnLugar9.setFocusPainted(false);
-		btnLugar9.setIcon(recImg);
+		btnLugar9.setIcon(recImgPuesto1);
 		btnLugar9.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnLugar9.setActionCommand("lugar9");
+		btnLugar9.setVisible(false);
 		add(btnLugar9);
 
 //---------------------------------------------------------------------------------------------			
@@ -309,7 +318,7 @@ public class PanelPuestos extends JPanel {
 		btnCajon5.setIcon(recImg);
 		btnCajon5.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnCajon5.setActionCommand("Cajon5");
-		btnCajon6.setVisible(false);
+		btnCajon5.setVisible(false);
 		add(btnCajon5);
 
 		img = new ImageIcon("recursos/6.jpg");
@@ -2065,11 +2074,11 @@ public class PanelPuestos extends JPanel {
 
 		fondo = new ImageIcon(getClass().getResource("/imagenes/VitrinaIzquierdaPuestos.jpg"));
 		recFondo = new ImageIcon(fondo.getImage().getScaledInstance(376, 517, Image.SCALE_SMOOTH));
-		lblVitrinaDerecha = new JLabel(recFondo);
-		lblVitrinaDerecha.setSize(376, 517);
-		lblVitrinaDerecha.setBounds(250, 90, 376, 517);
-		lblVitrinaDerecha.setVisible(false);
-		add(lblVitrinaDerecha);
+		lblVitrinaIzquierda = new JLabel(recFondo);
+		lblVitrinaIzquierda.setSize(376, 517);
+		lblVitrinaIzquierda.setBounds(250, 90, 376, 517);
+		lblVitrinaIzquierda.setVisible(false);
+		add(lblVitrinaIzquierda);
 
 		fondo = new ImageIcon(getClass().getResource("/imagenes/BateriasPuestos.jpg"));
 		recFondo = new ImageIcon(fondo.getImage().getScaledInstance(291, 517, Image.SCALE_SMOOTH));
@@ -3485,6 +3494,46 @@ public class PanelPuestos extends JPanel {
 
 	public void setBtnCajon136(Boton btnCajon136) {
 		this.btnCajon136 = btnCajon136;
+	}
+
+	public ImageIcon getImgPuesto() {
+		return imgPuesto;
+	}
+
+	public void setImgPuesto(ImageIcon imgPuesto) {
+		this.imgPuesto = imgPuesto;
+	}
+
+	public ImageIcon getRecImgPuesto1() {
+		return recImgPuesto1;
+	}
+
+	public void setRecImgPuesto1(ImageIcon recImgPuesto1) {
+		this.recImgPuesto1 = recImgPuesto1;
+	}
+
+	public ImageIcon getRecImgPuesto2() {
+		return recImgPuesto2;
+	}
+
+	public void setRecImgPuesto2(ImageIcon recImgPuesto2) {
+		this.recImgPuesto2 = recImgPuesto2;
+	}
+
+	public ImageIcon getRecImgPuesto3() {
+		return recImgPuesto3;
+	}
+
+	public void setRecImgPuesto3(ImageIcon recImgPuesto3) {
+		this.recImgPuesto3 = recImgPuesto3;
+	}
+
+	public JLabel getLblVitrinaIzquierda() {
+		return lblVitrinaIzquierda;
+	}
+
+	public void setLblVitrinaIzquierda(JLabel lblVitrinaIzquierda) {
+		this.lblVitrinaIzquierda = lblVitrinaIzquierda;
 	}
 
 }

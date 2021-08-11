@@ -1,12 +1,14 @@
 package autohella.controller;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -301,6 +303,335 @@ public class Controller implements ActionListener {
 			ventanaPrincipal.getPanelAlmacen().setVisible(true);
 			ventanaPrincipal.getPanelEntrada().setVisible(false);
 		}
+
+		if (comando.equals("EstanteAlargado") && verificar == 1) {
+
+			ventanaPrincipal.getPanelPuestos().setVisible(true);
+			ventanaPrincipal.getPanelEntrada().setVisible(false);
+
+			ventanaPrincipal.getPanelPuestos().getLblVitrinaDerecha().setVisible(true);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setBounds(440, 108, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setBounds(440, 163, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setBounds(440, 230, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setBounds(440, 290, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5().setBounds(440, 353, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6().setBounds(440, 415, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7().setBounds(440, 475, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar8()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar8().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar8().setBounds(440, 540, 60, 60);
+
+		} else if (comando.equals("EstanteAlargado")) {
+
+		}
+
+		if (comando.equals("Vitrina") && verificar == 1) {
+
+			ventanaPrincipal.getPanelPuestos().setVisible(true);
+			ventanaPrincipal.getPanelEntrada().setVisible(false);
+
+			ventanaPrincipal.getPanelPuestos().getLblVitrinaCentral().setVisible(true);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setBounds(400, 203, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setBounds(400, 300, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setBounds(400, 390, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setBounds(400, 480, 60, 60);
+
+		} else if (comando.equals("Vitrina")) {
+
+		}
+
+		if (comando.equals("Vitrina2") && verificar == 1) {
+
+			ventanaPrincipal.getPanelPuestos().setVisible(true);
+			ventanaPrincipal.getPanelEntrada().setVisible(false);
+
+			ventanaPrincipal.getPanelPuestos().getLblVitrinaCentral().setVisible(true);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setBounds(400, 203, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setBounds(400, 300, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setBounds(400, 390, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setBounds(400, 480, 60, 60);
+
+		} else if (comando.equals("Vitrina2")) {
+
+		}
+
+		if (comando.equals("VitrinaGrande") && verificar == 1) {
+
+			ventanaPrincipal.getPanelPuestos().setVisible(true);
+			ventanaPrincipal.getPanelEntrada().setVisible(false);
+
+			ventanaPrincipal.getPanelPuestos().getLblVitrinaIzquierda().setVisible(true);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto3());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setBounds(415, 165, 35, 35);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto3());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setBounds(415, 220, 35, 35);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto3());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setBounds(415, 260, 35, 35);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto3());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setBounds(415, 305, 35, 35);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto3());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5().setBounds(415, 350, 35, 35);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto3());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6().setBounds(415, 400, 35, 35);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto3());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7().setBounds(415, 445, 35, 35);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar8()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto3());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar8().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar8().setBounds(415, 495, 35, 35);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar9()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto3());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar9().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar9().setBounds(415, 540, 35, 35);
+
+		} else if (comando.equals("VitrinaGrande")) {
+
+		}
+
+		if (comando.equals("Bateria") && verificar == 1) {
+
+			ventanaPrincipal.getPanelPuestos().setVisible(true);
+			ventanaPrincipal.getPanelEntrada().setVisible(false);
+
+			ventanaPrincipal.getPanelPuestos().getLblBaterias().setVisible(true);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setBounds(425, 117, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setBounds(425, 195, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setBounds(425, 275, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setBounds(425, 350, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5().setBounds(425, 430, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6().setBounds(425, 510, 50, 50);
+
+		} else if (comando.equals("Bateria")) {
+
+		}
+
+		if (comando.equals("Vitrina3") && verificar == 1) {
+
+			ventanaPrincipal.getPanelPuestos().setVisible(true);
+			ventanaPrincipal.getPanelEntrada().setVisible(false);
+
+			ventanaPrincipal.getPanelPuestos().getLblVitrinaTrasera().setVisible(true);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setBounds(400, 225, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setBounds(400, 315, 60, 60);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto2());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setBounds(400, 410, 60, 60);
+
+		} else if (comando.equals("Vitrina3")) {
+
+		}
+
+		if (comando.equals("Correas") && verificar == 1) {
+
+			ventanaPrincipal.getPanelPuestos().setVisible(true);
+			ventanaPrincipal.getPanelEntrada().setVisible(false);
+
+			ventanaPrincipal.getPanelPuestos().getLblCorreas().setVisible(true);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setBounds(360, 155, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setBounds(360, 215, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setBounds(360, 270, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setBounds(360, 320, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5().setBounds(360, 375, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6().setBounds(360, 430, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7().setBounds(360, 491, 50, 50);
+
+		} else if (comando.equals("Correas")) {
+
+		}
+
+		if (comando.equals("Correas2") && verificar == 1) {
+
+			ventanaPrincipal.getPanelPuestos().setVisible(true);
+			ventanaPrincipal.getPanelEntrada().setVisible(false);
+
+			ventanaPrincipal.getPanelPuestos().getLblCorreas().setVisible(true);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar1().setBounds(360, 155, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar2().setBounds(360, 215, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar3().setBounds(360, 270, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar4().setBounds(360, 320, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar5().setBounds(360, 375, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar6().setBounds(360, 430, 50, 50);
+
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7()
+					.setIcon(ventanaPrincipal.getPanelPuestos().getRecImgPuesto1());
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7().setVisible(true);
+			ventanaPrincipal.getPanelPuestos().getBtnLugar7().setBounds(360, 491, 50, 50);
+
+		} else if (comando.equals("Correas2")) {
+
+		}
+
 //----------------------------------------------------------------------------------------------
 
 //------------------------------------------Panel Almacen-------------------------------------
@@ -317,21 +648,24 @@ public class Controller implements ActionListener {
 
 		if (comando.equals("Registrar")) {
 
-			if (!"".equals(ventanaPrincipal.getPanelRegistro().getTxtReferencia().getText())
-					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtNombre().getText())
-					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtMarca().getText())
-					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtDescripcion().getText())
-					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtPrecio().getText())
-					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtCantidad().getText())) {
+//			if (!"".equals(ventanaPrincipal.getPanelRegistro().getTxtReferencia().getText())
+//					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtNombre().getText())
+//					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtMarca().getText())
+//					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtDescripcion().getText())
+//					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtPrecio().getText())
+//					&& !"".equals(ventanaPrincipal.getPanelRegistro().getTxtCantidad().getText())) {
 
-				String pReferencia = ventanaPrincipal.getPanelRegistro().getTxtReferencia().getText();
-				String pNombre = ventanaPrincipal.getPanelRegistro().getTxtNombre().getText();
-				String pMarca = ventanaPrincipal.getPanelRegistro().getTxtMarca().getText();
-				String pDescripcion = ventanaPrincipal.getPanelRegistro().getTxtDescripcion().getText();
-				int pPrecio = Integer.parseInt(ventanaPrincipal.getPanelRegistro().getTxtPrecio().getText());
-				int pCantidad = Integer.parseInt(ventanaPrincipal.getPanelRegistro().getTxtCantidad().getText());
-				
-				
+//				String pReferencia = ventanaPrincipal.getPanelRegistro().getTxtReferencia().getText();
+//				String pNombre = ventanaPrincipal.getPanelRegistro().getTxtNombre().getText();
+//				String pMarca = ventanaPrincipal.getPanelRegistro().getTxtMarca().getText();
+//				String pDescripcion = ventanaPrincipal.getPanelRegistro().getTxtDescripcion().getText();
+//				int pPrecio = Integer.parseInt(ventanaPrincipal.getPanelRegistro().getTxtPrecio().getText());
+//				int pCantidad = Integer.parseInt(ventanaPrincipal.getPanelRegistro().getTxtCantidad().getText());
+
+			verificar = 1;
+			ventanaPrincipal.getPanelEntrada().getScrool().setVisible(true);
+			ventanaPrincipal.getPanelEntrada().setVisible(true);
+			ventanaPrincipal.getPanelRegistro().setVisible(false);
 
 //				Producto producto = new Producto(pReferencia, pNombre, pMarca, pDescripcion, pPrecio, pCantidad);
 //
@@ -353,14 +687,63 @@ public class Controller implements ActionListener {
 //							JOptionPane.ERROR_MESSAGE);
 //				}
 
-			} else {
-				JOptionPane.showMessageDialog(null, "No puede dejar campos sin llenar", "Error",
-						JOptionPane.WARNING_MESSAGE);
-			}
+//			} else {
+//				JOptionPane.showMessageDialog(null, "No puede dejar campos sin llenar", "Error",
+//						JOptionPane.WARNING_MESSAGE);
+//			}
 		}
 
 		if (comando.equals("Editar")) {
 
+		}
+
+//----------------------------------------------------------------------------------------------
+
+//------------------------------------------Panel Puestos-------------------------------------
+
+		if (comando.equals("lugar1")) {
+
+			JOptionPane.showMessageDialog(null, "lugar 1 :)", "Información", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		if (comando.equals("lugar2")) {
+
+			JOptionPane.showMessageDialog(null, "lugar 2 :)", "Información", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		if (comando.equals("lugar3")) {
+
+			JOptionPane.showMessageDialog(null, "lugar 3 :)", "Información", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		if (comando.equals("lugar4")) {
+
+			JOptionPane.showMessageDialog(null, "lugar 4 :)", "Información", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		if (comando.equals("lugar5")) {
+
+			JOptionPane.showMessageDialog(null, "lugar 5 :)", "Información", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		if (comando.equals("lugar6")) {
+
+			JOptionPane.showMessageDialog(null, "lugar 6 :)", "Información", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		if (comando.equals("lugar7")) {
+
+			JOptionPane.showMessageDialog(null, "lugar 7 :)", "Información", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		if (comando.equals("lugar8")) {
+
+			JOptionPane.showMessageDialog(null, "lugar 8 :)", "Información", JOptionPane.INFORMATION_MESSAGE);
+		}
+
+		if (comando.equals("lugar9")) {
+
+			JOptionPane.showMessageDialog(null, "lugar 9 :)", "Información", JOptionPane.INFORMATION_MESSAGE);
 		}
 
 //----------------------------------------------------------------------------------------------
